@@ -34,4 +34,8 @@ variable "public_subnets" {
     public-2 = "10.42.11.0/24"
   }
 }
+variable "billing_code" {
+  type        = string
+  description = "(Optional) Billing code to use for all resources in this module. Default: dev"
+}
 
