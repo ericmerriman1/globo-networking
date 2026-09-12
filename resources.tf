@@ -18,6 +18,7 @@ data "aws_availability_zones" "available" {}
 locals {
   common_tags = {
     Environment = var.environment
+    BillingCode = var.billing_code
   }
 }
 
@@ -55,6 +56,7 @@ resource "aws_security_group" "ingress" {
     self             = false
     to_port          = 0
   }]
+
   ingress                = []
   name                   = "no-ingress-sg"
   revoke_rules_on_delete = null
